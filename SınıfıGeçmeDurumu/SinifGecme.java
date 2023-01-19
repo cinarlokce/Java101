@@ -19,7 +19,7 @@ public class SinifGecme {
 
         System.out.print("Müzik notunuzu giriniz: ");
         muzik=sc.nextInt();
-        int dersSayisi=5,dersToplami=(mat+turkce+kimya+fizik+muzik);
+        int dersSayisi=5;
 
         if(mat<0 || mat>100){
             dersSayisi-=1;
@@ -41,10 +41,18 @@ public class SinifGecme {
             dersSayisi-=1;
             muzik=0;
         }
+
+        int dersToplami=(mat+turkce+kimya+fizik+muzik);
+
         if(dersSayisi>0){
             double average=dersToplami/dersSayisi;
+                if(average>=55){
+                    System.out.println("Tebrikler, sınıfı geçtiniz !");
+                }
+                else System.out.println("Sınıfta kaldınız, seneye tekrar görüşmek üzere!");
             System.out.printf("Ortalamanız: %.2f",average);
         }
         else System.out.println("Yanlış Sayılar Girdiniz.");
     }
+
 }
